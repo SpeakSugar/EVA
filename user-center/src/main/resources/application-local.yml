@@ -1,0 +1,23 @@
+#内嵌TOMCAT应用设置
+server:
+  port: 8083
+
+####数据库设置####
+spring:
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5432/user_center
+    username: postgres
+    password: 123456
+    driver-class-name: org.postgresql.Driver
+mybatis:
+  mapper-locations: classpath:com/cloud/base/mapper/TestMapper.xml
+  type-aliases-package: com.cloud.base.model
+
+####允许bean定义覆盖####
+spring.main.allow-bean-definition-overriding: true
+
+####eureka客户端####
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
