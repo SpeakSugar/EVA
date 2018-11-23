@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
 
-@FeignClient(name = "wsc-service", url = "http://127.0.0.1:8801/base-portal")
+@FeignClient(name = "wsc-service", url = "http://127.0.0.1:8801/base-portal", configuration = ApiConfig.class)
 public interface TestFeignGateway {
 
     @RequestMapping(value = "/testResultBean", method = RequestMethod.GET)
